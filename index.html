@@ -1,0 +1,2192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mabule Marketing Solutions</title>
+
+    <meta
+        name="description"
+        content="Mabule Marketing Solutions helps businesses look professional, build their brand and reach more customers."
+    >
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #05080d;
+            color: #ffffff;
+            line-height: 1.5;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+
+        /* =========================
+           VARIABLES
+        ========================= */
+
+        :root {
+            --blue: #087cff;
+            --blue-dark: #0056c7;
+            --light-blue: #35a8ff;
+            --black: #05080d;
+            --dark: #0b111b;
+            --card: #101722;
+            --white: #ffffff;
+            --gray: #aeb8c7;
+            --border: rgba(45, 143, 255, 0.35);
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(5, 8, 13, 0.82);
+            backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+
+            height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 25px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 900;
+            letter-spacing: 5px;
+            position: relative;
+           /*  right: 1.5rem; */
+        }
+
+        .logo span {
+            display: block;
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: var(--blue);
+            margin-top: -3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--light-blue);
+        }
+
+        .nav-button {
+            background: var(--blue);
+            padding: 11px 18px;
+            border-radius: 7px;
+        }
+
+        .nav-button:hover {
+            color: white !important;
+            background: var(--blue-dark);
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(5,8,13,0.96),
+                    rgba(5,8,13,0.75),
+                    rgba(5,8,13,0.35)
+                ),
+                url("products img/c9d625ac01166a4c7a6c20e38db6c8e1.png");
+
+            background-size: cover;
+            background-position: center;
+
+            filter: blur(2px);
+            transform: scale(1.04);
+
+            z-index: -2;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at 70% 50%,
+                    rgba(0,120,255,0.22),
+                    transparent 40%
+                );
+
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+            padding: 0px 25px 70px;
+            position: relative;
+            top: 90px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 90px);
+            line-height: 0.98;
+            max-width: 1200px;
+            font-weight: 950;
+            letter-spacing: -2px;
+           /*  margin-top: 3rem; */
+        }
+
+        .hero h1 span {
+            color: var(--blue);
+        }
+
+        .hero-text {
+            max-width: 620px;
+            margin-top: 25px;
+
+            color: #d7dee8;
+            font-size: 19px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 14px 22px;
+            border-radius: 8px;
+
+            font-weight: 800;
+            border: 1px solid transparent;
+
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--blue-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border-color: var(--blue);
+            color: white;
+            background: rgba(0,0,0,0.25);
+        }
+
+        .btn-outline:hover {
+            background: var(--blue);
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        section {
+            padding: 90px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-heading {
+            margin-bottom: 45px;
+        }
+
+        .section-heading small {
+            color: var(--blue);
+            font-weight: 800;
+            letter-spacing: 3px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(32px, 5vw, 55px);
+            margin-top: 8px;
+            line-height: 1;
+        }
+
+        .section-heading p {
+            max-width: 650px;
+            color: var(--gray);
+            margin-top: 15px;
+        }
+
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .services {
+            background: #070c13;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            background: linear-gradient(
+                145deg,
+                #111a27,
+                #080c12
+            );
+
+            border: 1px solid var(--border);
+            border-radius: 14px;
+
+            padding: 30px;
+
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--blue);
+        }
+
+        .service-number {
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 900;
+        }
+
+        .service-card h3 {
+            font-size: 23px;
+            margin: 12px 0;
+        }
+
+        .service-card p {
+            color: var(--gray);
+        }
+
+        .service-price {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--light-blue);
+        }
+
+
+        /* =========================
+           PRODUCTS
+        ========================= */
+
+        .products {
+            background: var(--black);
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            border: 1px solid var(--border);
+            background: transparent;
+            color: white;
+
+            padding: 10px 17px;
+            border-radius: 30px;
+
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--blue);
+            border-color: var(--blue);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .product-card {
+            background: var(--card);
+
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--blue);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 260px;
+            object-fit: contain;
+            background: #111822;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-category {
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-info h3 {
+            margin: 7px 0;
+            font-size: 21px;
+        }
+
+        .product-info p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .product-bottom {
+            margin-top: 18px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .price {
+            font-weight: 900;
+            font-size: 20px;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .small-btn {
+            padding: 9px 12px;
+            border-radius: 6px;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            border: 1px solid var(--blue);
+            background: var(--blue);
+            color: white;
+        }
+
+        .small-btn.outline {
+            background: transparent;
+        }
+
+
+        /* =========================
+           HOW IT WORKS
+        ========================= */
+
+        .how {
+            background: #080e17;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .step {
+            padding: 25px;
+
+            border-left: 2px solid var(--blue);
+            background: rgba(255,255,255,0.02);
+        }
+
+        .step-number {
+            font-size: 38px;
+            color: var(--blue);
+            font-weight: 900;
+        }
+
+        .step h3 {
+            margin: 10px 0;
+        }
+
+        .step p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           MARKETING PLANS
+        ========================= */
+
+        .plans {
+            background: #05080d;
+        }
+
+        .plan-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .plan {
+            padding: 35px 28px;
+
+            border-radius: 15px;
+            background: #0c131e;
+
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .plan.featured {
+            border-color: var(--blue);
+            box-shadow: 0 0 30px rgba(0,120,255,0.12);
+        }
+
+        .plan-tag {
+            color: var(--blue);
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .plan h3 {
+            font-size: 28px;
+            margin-top: 10px;
+        }
+
+        .plan-price {
+            font-size: 38px;
+            font-weight: 900;
+            margin: 15px 0;
+        }
+
+        .plan-price span {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .plan ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .plan li {
+            margin: 12px 0;
+            color: #d8e0eb;
+        }
+
+        .plan li::before {
+            content: "✓";
+            color: var(--blue);
+            font-weight: 900;
+            margin-right: 9px;
+        }
+
+        .plan .btn {
+            width: 100%;
+        }
+
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education {
+            background:
+                linear-gradient(
+                    135deg,
+                    #08111e,
+                    #05080d
+                );
+        }
+
+        .education-box {
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 45px;
+
+            max-width: 900px;
+        }
+
+        .education-box h2 {
+            font-size: clamp(30px, 5vw, 52px);
+            line-height: 1;
+        }
+
+        .education-box h2 span {
+            color: var(--blue);
+        }
+
+        .education-box p {
+            color: var(--gray);
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .education-points {
+            margin-top: 25px;
+        }
+
+        .education-points div {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: #07101b;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info h2 {
+            font-size: 45px;
+            line-height: 1;
+        }
+
+        .contact-info h2 span {
+            color: var(--blue);
+        }
+
+        .contact-info p {
+            color: var(--gray);
+            margin: 20px 0;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-link {
+            padding: 17px;
+
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 9px;
+
+            background: rgba(255,255,255,0.03);
+        }
+
+        .contact-link strong {
+            display: block;
+            color: var(--blue);
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .contact-link span {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           FORM
+        ========================= */
+
+        .contact-form {
+            background: #0c141f;
+            padding: 30px;
+            border-radius: 15px;
+
+            border: 1px solid var(--border);
+        }
+
+        .contact-form h3 {
+            margin-bottom: 20px;
+            font-size: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+
+            padding: 13px 14px;
+
+            background: #060a10;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 7px;
+
+            color: white;
+            outline: none;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--blue);
+        }
+
+        .contact-form button {
+            width: 100%;
+            border: none;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #030509;
+            padding: 35px 20px;
+
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            font-size: 23px;
+            font-weight: 900;
+            letter-spacing: 4px;
+        }
+
+        .footer-logo span {
+            color: var(--blue);
+        }
+
+        footer p {
+            color: var(--gray);
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           WHATSAPP FLOAT
+        ========================= */
+
+        .whatsapp-float {
+            position: fixed;
+
+            right: 20px;
+            bottom: 20px;
+
+            width: 58px;
+            height: 58px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #25D366;
+            color: white;
+
+            font-size: 25px;
+            font-weight: 900;
+
+            z-index: 999;
+
+            box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                position: absolute;
+
+                top: 75px;
+                left: 0;
+
+                width: 100%;
+
+                background: #070b11;
+
+                display: none;
+                flex-direction: column;
+
+                padding: 25px;
+
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .service-grid,
+            .product-grid,
+            .plan-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+            .container {
+                text-align: center;
+            }
+
+            section {
+                padding: 0px 0px;
+            }
+
+            .navbar {
+                padding: 0 18px;
+            }
+
+            .hero-content {
+               /*  padding: 139px 1px 0px; */
+               width: 100%;
+               max-width: 100%;
+               margin: 0 auto;
+            }
+
+            .hero h1 {
+                font-size: clamp(2.7em, 6vw, 5.5rem);
+                line-height: 1.05;
+                font-weight: 800;
+                text-align: center;
+            }
+
+            .hero-text {
+                font-size: 1.08rem;
+                line-height: 1.5;
+                text-align: center;
+                margin-bottom: 26px;
+            }
+
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                gap: 10px;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+
+            .service-grid,
+            .product-grid,
+            .plan-grid,
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .product-image {
+                height: 300px;
+                object-fit: contain;
+                object-position: center;
+            }
+
+            .education-box {
+                padding: 28px;
+            }
+
+            .contact-info h2 {
+                font-size: 38px;
+            }
+
+            .product-bottom {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .product-actions {
+                width: 100%;
+            }
+
+            .small-btn {
+                flex: 1;
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header>
+
+    <nav class="navbar">
+
+        <a href="#home" class="logo">
+            MABULE
+            <span>MARKETING SOLUTIONS</span>
+        </a>
+
+        <div class="menu-btn" id="menuBtn">
+            ☰
+        </div>
+
+        <div class="nav-links" id="navLinks">
+
+            <a href="#home">Home</a>
+
+            <a href="#services">Services</a>
+
+            <a href="#work">Our Work</a>
+
+            <a href="#plans">Marketing</a>
+
+            <a href="#contact" class="nav-button">
+                Contact
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-bg"></div>
+
+    <div class="hero-content">
+
+        <h1>
+            <span>GET NOTICED.</span><br>
+            GROW ONLINE.
+        </h1>
+
+        <p class="hero-text">
+            Professional designs, websites and marketing solutions
+            made for businesses readt to scale. from online presence to Analytics and conversion.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#work" class="btn btn-primary">
+                EXPLORE OUR WORK
+            </a>
+
+            <a href="#services" class="btn btn-outline">
+                VIEW SERVICES
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section class="services" id="services">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <h2>
+                IS YOUR BUSINESS LOOKING<br>
+                <span style="color:#087cff;">
+                    PROFESSIONALLY?.
+                </span>
+            </h2>
+
+            <p>
+                Choose / tell us what your business needs. And contact Mabule to get started.
+            </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+
+            <div class="service-card">
+
+                <div class="service-number">01</div>
+
+                <h3>
+                    Posters & Flyers
+                </h3>
+
+                <p>
+                    Professional promotional designs
+                    for your business, products and services.
+                </p>
+
+                <div class="service-price">
+                    From R150
+                </div>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-number">02</div>
+
+                <h3>
+                    Business Profile
+                </h3>
+
+                <p>
+                    Present your business, services,
+                    information and contact details professionally.
+                </p>
+
+                <div class="service-price">
+                    R300
+                </div>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-number">03</div>
+
+                <h3>
+                    Logo Design
+                </h3>
+
+                <p>
+                    Create a visual identity that makes
+                    your business recognizable.
+                </p>
+
+                <div class="service-price">
+                   FROM R1,000
+                </div>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-number">04</div>
+
+                <h3>
+                    Websites
+                </h3>
+
+                <p>
+                    Professional websites and landing pages
+                    designed to showcase your business online.
+                </p>
+
+                <div class="service-price">
+                    From R1,500
+                </div>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-number">05</div>
+
+                <h3>
+                    WhatsApp Catalogue
+                </h3>
+
+                <p>
+                    Organize your products and prices so customers
+                    can easily see what you offer.
+                </p>
+
+                <div class="service-price">
+                    R250
+                </div>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-number">06</div>
+
+                <h3>
+                    Food Menu Design
+                </h3>
+
+                <p>
+                    Clean menus that make your food and
+                    prices easy for customers to understand.
+                </p>
+
+                <div class="service-price">
+                    R200
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     OUR WORK
+========================= -->
+
+<section class="products" id="work">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <h2>
+                <span style="color:#087cff;">
+                    STAND OUT OF YOUR COMPETITORS
+                </span>
+            </h2>
+
+            <p>
+                Find something that fits your business.
+            </p>
+
+        </div>
+
+
+        <!-- FILTERS -->
+
+        <div class="filter-buttons">
+
+            <button
+                class="filter-btn active"
+                data-filter="all">
+                All
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="flyer">
+                Flyers
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="website">
+                Websites
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="landing">
+                Landing Pages
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="logo">
+                Logos
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="menu">
+                Menus
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCTS ARE GENERATED BY JAVASCRIPT -->
+
+        <div
+            class="product-grid"
+            id="productGrid">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     HOW IT WORKS
+========================= -->
+
+<section class="how">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <h2>
+                FROM IDEA<br>
+                <span style="color:#087cff;">
+                    TO BUSINESS.
+                </span>
+            </h2>
+
+        </div>
+
+
+        <div class="steps">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <h3>
+                    Choose
+                </h3>
+
+                <p>
+                    Find a design, website or service
+                    that fits your business.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    Send us a WhatsApp message,
+                    call or email.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <h3>
+                    Customize
+                </h3>
+
+                <p>
+                    We adjust the project to match
+                    your business.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    04
+                </div>
+
+                <h3>
+                    Launch
+                </h3>
+
+                <p>
+                    Receive your finished design,
+                    website or marketing service.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MARKETING PLANS
+========================= -->
+
+<section class="plans" id="plans">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <h2>
+                KEEP YOUR BUSINESS<br>
+                <span style="color:#087cff;">
+                    IN FRONT OF PEOPLE.
+                </span>
+            </h2>
+
+            <p>
+                We build and continuously market your digital presence,
+                professionally.
+            </p>
+
+        </div>
+
+
+        <div class="plan-grid">
+
+
+            <!-- SMALL -->
+
+            <div class="plan">
+
+                <div class="plan-tag">
+                    SMALL BUSINESSES
+                </div>
+
+                <h3>
+                    STARTER
+                </h3>
+
+                <div class="plan-price">
+                    R1,500
+                    <span>/ R325 month</span>
+                </div>
+
+                <ul>
+
+                    <li>Professional Business Website</li>
+
+                    <li>Domain Name</li>
+
+                    <li>Website Hosting & Maintenance</li>
+
+                    <li>Basic SEO</li>
+
+                    <li>4 Social Media Posts / Month</li>
+
+                    <li>2-3 Promotional Campaigns / Month</li>
+
+                    <li>Analytics & Conversion Tracking</li>
+
+                </ul>
+
+                <a
+                    href="#contact"
+                    class="btn btn-outline">
+                    GET STARTED
+                </a>
+
+            </div>
+
+
+            <!-- GROWING -->
+
+            <div class="plan featured">
+
+                <div class="plan-tag">
+                    GROWING BUSINESSES
+                </div>
+
+                <h3>
+                    GROWTH
+                </h3>
+
+                <div class="plan-price">
+                    R2,500
+                    <span>/ R650 month</span>
+                </div>
+
+                <ul>
+
+                    <li>Professional Business Multi-Page Website </li>
+
+                    <li>Domain Nmane</li>
+
+                    <li>Website Hosting & Maintenance</li>
+
+                    <li>8-12 Social Media Posts / Month</li>
+
+                    <li>3-4 Promotional Campaigns / Month</li>
+
+                    <li>Marketing Graphics</li>
+
+                    <li>Website Pages Update</li>
+
+                    <li>Analytics & Conversion Tracking</li>
+
+                    <li>Monthly Marketng Strategies</li>
+
+                    <li>Competitor/Market Research</li>
+
+                </ul>
+
+                <a
+                    href="#contact"
+                    class="btn btn-primary">
+                    GET STARTED
+                </a>
+
+            </div>
+
+
+            <!-- BIG -->
+
+            <div class="plan">
+
+                <div class="plan-tag">
+                    BIG OPERATING BUSINESSES
+                </div>
+
+                <h3>
+                    DOMINATE
+                </h3>
+
+                <div class="plan-price">
+                    R3,500
+                    <span>/ R900 month</span>
+                </div>
+
+                <ul>
+
+                    <li>Everything in Growth Plan</li>
+
+                    <li>20 Social Media Posts / Month</li>
+
+                    <li>5 Promotional Campaign / Month</li>
+
+                    <li>Analytics & Conversion Tracking</li>
+
+                    <li>Advanced SEO</li>
+
+                    <li>Short Promotional Videos / Month</li>
+
+                    <li>Landing Pages</li>
+
+                    <li>Campaign Optimisation</li>
+
+                    <li>Monthly Strategy Session</li>
+
+                    <li>Priority Support</li>
+
+                </ul>
+
+                <a
+                    href="#contact"
+                    class="btn btn-outline">
+                    GET STARTED
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EDUCATION
+========================= -->
+
+<section class="education">
+
+    <div class="container">
+
+        <div class="education-box">
+
+            <h2>
+                YOUR BUSINESS<br>
+                NEEDS TO BE <span>SEEN.</span>
+            </h2>
+
+            <p>
+                A good product is important.
+                But people also need to know that your
+                business exists.
+            </p>
+
+
+            <div class="education-points">
+
+                <div>
+                    Branding = Your Business Identity
+                </div>
+
+                <div>
+                    Marketing = Knowing & Reaching Your Customers
+                </div>
+
+                <div>
+                    Consistency = Staying Remembered
+                </div>
+
+                <div>
+                    Visibility = Giving Customers A Reason To Notice You
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="contact-grid">
+
+
+            <div class="contact-info">
+
+                <h2>
+                    READY TO BUILD<br>
+                    YOUR <span>BUSINESS?</span>
+                </h2>
+
+                <p>
+                    Found something you like?
+                    Need something customized?
+                    Tell Mabule what your business needs.
+                </p>
+
+
+                <div class="contact-links">
+
+                    <a
+                        class="contact-link"
+                        href="https://wa.me/27679239725"
+                        target="_blank">
+
+                        <strong>
+                            WhatsApp
+                        </strong>
+
+                        <span>
+                            +27 67 923 9725
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        class="contact-link"
+                        href="tel:+27679239725">
+
+                        <strong>
+                            Call
+                        </strong>
+
+                        <span>
+                            +27 67 923 9725
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        class="contact-link"
+                        href="mailto:ttjiematlosha@gmail.com">
+
+                        <strong>
+                            Email
+                        </strong>
+
+                        <span>
+                            ttjiematlosha@gmail.com
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <div class="contact-form">
+
+                <h3>
+                    SEND AN ENQUIRY
+                </h3>
+
+                <form id="contactForm">
+
+                    <div class="form-group">
+
+                        <label>
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Your name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Business Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="business"
+                            placeholder="Business name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            What do you need?
+                        </label>
+
+                        <select id="service" required>
+
+                            <option value="">
+                                Select a service
+                            </option>
+
+                            <option>
+                                Poster / Flyer
+                            </option>
+
+                            <option>
+                                Business Profile
+                            </option>
+
+                            <option>
+                                Logo Design
+                            </option>
+
+                            <option>
+                                Website
+                            </option>
+
+                            <option>
+                                Landing Page
+                            </option>
+
+                            <option>
+                                WhatsApp Catalogue
+                            </option>
+
+                            <option>
+                                Food Menu
+                            </option>
+
+                            <option>
+                                Monthly Marketing
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            placeholder="Tell us briefly what you need..."></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary">
+
+                        SEND VIA WHATSAPP
+
+                    </button>
+
+                </form>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div class="footer-logo">
+            MABULE
+            <span>MARKETING SOLUTIONS</span>
+        </div>
+
+        <p>
+            © 2026 Mabule Marketing Solutions.
+            Built for businesses that want to grow.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     FLOATING WHATSAPP
+========================= -->
+
+<a
+    href="https://wa.me/27679239725"
+    target="_blank"
+    class="whatsapp-float"
+    aria-label="WhatsApp">
+
+    WA
+
+</a>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+
+/* ==========================================
+   MABULE PRODUCTS
+
+   ADD YOUR NEW WORK HERE
+========================================== */
+
+
+const products = [
+
+    {
+        name: "Restaurant Burger Flyer",
+        category: "flyer",
+        description: "Professional promotional flyer for a food business.",
+        price: "R150",
+        image: "products img/3c2c3b6ffb0aadc567913c95738aa926.png"
+    },
+
+
+    {
+        name: "Salon Promotional Flyer",
+        category: "flyer",
+        description: "Professional salon promotional design.",
+        price: "R150",
+        image: "products img/76188f94-335d-44f1-bc8e-e58ab90051f5.png"
+    },
+
+
+    {
+        name: "Local Food Menu",
+        category: "menu",
+        description: "Clean food menu design for local food businesses.",
+        price: "R200",
+        image: "products img/5c19a7da-7a33-4cda-9e5f-f85970b17b68.png"
+    },
+
+
+    {
+        name: "Guest House Website",
+        category: "website",
+        description: "Professional guest house website with booking enquiries.",
+        price: "From R1,500",
+        image: "products img/a03d5b1d-7a81-4a82-8c5a-720a2a032d71.png",
+        demo: "#"
+    },
+
+
+    {
+        name: "Premium Car Wash Website",
+        category: "website",
+        description: "Modern website designed for a car wash business.",
+        price: "From R1,500",
+        image: "products img/IMG-20260528-WA0063.jpg",
+        demo: "#"
+    },
+
+
+    {
+        name: "Business Logo",
+        category: "logo",
+        description: "Professional logo design for your business.",
+        price: "R1,000",
+        image: "products img/1785610137323.jpg"
+    }
+
+];
+
+
+
+/* ==========================================
+   PRODUCT DISPLAY
+========================================== */
+
+
+const productGrid =
+    document.getElementById("productGrid");
+
+
+function displayProducts(filter = "all") {
+
+    productGrid.innerHTML = "";
+
+
+    const filteredProducts =
+        filter === "all"
+        ? products
+        : products.filter(
+            product => product.category === filter
+        );
+
+
+    filteredProducts.forEach(product => {
+
+
+        const card =
+            document.createElement("div");
+
+        card.className = "product-card";
+
+
+        let actionButton = "";
+
+
+        if (product.demo && product.demo !== "#") {
+
+            actionButton = `
+                <a
+                    href="${product.demo}"
+                    target="_blank"
+                    class="small-btn">
+                    VISIT WEBSITE
+                </a>
+            `;
+
+        } else {
+
+            actionButton = `
+                <button
+                    class="small-btn"
+                    onclick="orderProduct('${product.name}')">
+                    ORDER
+                </button>
+            `;
+
+        }
+
+
+        card.innerHTML = `
+
+            <img
+                src="${product.image}"
+                alt="${product.name}"
+                class="product-image"
+                onerror="this.src='https://placehold.co/800x600/101722/ffffff?text=MABULE+PROJECT';"
+            >
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    ${product.category}
+                </div>
+
+                <h3>
+                    ${product.name}
+                </h3>
+
+                <p>
+                    ${product.description}
+                </p>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ${product.price}
+                    </div>
+
+                    <div class="product-actions">
+
+                        <button
+                            class="small-btn outline"
+                            onclick="askAboutProduct('${product.name}')">
+                            ASK
+                        </button>
+
+                        ${actionButton}
+
+                    </div>
+
+                </div>
+
+            </div>
+        `;
+
+
+        productGrid.appendChild(card);
+
+    });
+
+}
+
+
+displayProducts();
+
+
+
+/* ==========================================
+   PRODUCT FILTER
+========================================== */
+
+
+const filterButtons =
+    document.querySelectorAll(".filter-btn");
+
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn =>
+            btn.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+        displayProducts(
+            button.dataset.filter
+        );
+
+    });
+
+});
+
+
+
+/* ==========================================
+   WHATSAPP PRODUCT ORDER
+========================================== */
+
+
+function orderProduct(productName) {
+
+    const message =
+        `Hi Mabule, I am interested in "${productName}" that I saw on your website. I would like to know how I can order it.`;
+
+    const whatsapp =
+        `https://wa.me/27679239725?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsapp, "_blank");
+
+}
+
+
+
+/* ==========================================
+   ASK ABOUT PRODUCT
+========================================== */
+
+
+function askAboutProduct(productName) {
+
+    const message =
+        `Hi Mabule, I saw "${productName}" on your website and I would like to ask about it.`;
+
+    const whatsapp =
+        `https://wa.me/27679239725?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsapp, "_blank");
+
+}
+
+
+
+/* ==========================================
+   CONTACT FORM
+========================================== */
+
+
+document
+    .getElementById("contactForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+        const name =
+            document.getElementById("name").value;
+
+        const business =
+            document.getElementById("business").value;
+
+        const service =
+            document.getElementById("service").value;
+
+        const message =
+            document.getElementById("message").value;
+
+
+        const whatsappMessage =
+
+            `Hi Mabule,
+
+My name is ${name}.
+
+Business:
+${business}
+
+I am interested in:
+${service}
+
+Message:
+${message}
+
+I found Mabule through the website.`;
+
+
+        const whatsappURL =
+            `https://wa.me/27679239725?text=${encodeURIComponent(whatsappMessage)}`;
+
+
+        window.open(
+            whatsappURL,
+            "_blank"
+        );
+
+    });
+
+
+
+/* ==========================================
+   HAMBURGER MENU
+========================================== */
+
+
+const menuBtn =
+    document.getElementById("menuBtn");
+
+const navLinks =
+    document.getElementById("navLinks");
+
+
+menuBtn.addEventListener("click", () => {
+
+    navLinks.classList.toggle("active");
+
+});
+
+
+/* Close mobile menu after clicking */
+
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("active");
+
+        });
+
+    });
+
+
+</script>
+
+</body>
+</html>
